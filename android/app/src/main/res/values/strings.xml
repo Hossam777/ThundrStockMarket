@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ThundrStockMarket</string>
+    <string name="developer_name">Hossam Abdelhady</string>
+    <string name="created_by">Created By</string>
 </resources>
