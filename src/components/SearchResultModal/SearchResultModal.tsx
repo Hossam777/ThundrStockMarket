@@ -50,7 +50,7 @@ const SearchResultModal = ({searchTxt, isModalVisible, onHideModal}: Props) => {
   useEffect(() => {
     if (isModalVisible && searchTxt) {
       setLoading(true);
-      TickersAPIHandler.getTickers(20)
+      TickersAPIHandler.getTickersByName(searchTxt)
         .then((response: TickersResponse) => {
           setTickersList(response.results);
           setPaginationURL(response?.next_url);
@@ -85,7 +85,9 @@ const SearchResultModal = ({searchTxt, isModalVisible, onHideModal}: Props) => {
       backdropColor={Colors.grey}
       backdropOpacity={0.5}
       swipeDirection={null}
-      onDismiss={onDismiss}>
+      onDismiss={onDismiss}
+      onBackButtonPress={onDismiss}
+      onBackdropPress={onDismiss}>
       <View style={Style.modalContent}>
         <View style={Style.header}>
           <Text style={Style.title}>Stocks</Text>
