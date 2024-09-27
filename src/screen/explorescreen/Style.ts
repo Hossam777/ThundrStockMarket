@@ -2,7 +2,6 @@ import {StyleSheet} from 'react-native';
 import Typography from '../../theme/Typography';
 import Colors from '../../theme/Colors';
 import {borderRadius, padding} from '../../constants/spacing';
-import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
 
 const Style = StyleSheet.create({
   container: {
@@ -31,32 +30,13 @@ const Style = StyleSheet.create({
     right: 0,
     left: 0,
   },
-  errorComponent: {
-    flexDirection: 'row',
-    paddingVertical: 3,
-    paddingHorizontal: padding.small,
-    marginHorizontal: padding.small,
-    backgroundColor: Colors.warning,
-    position: 'absolute',
-    bottom: StaticSafeAreaInsets.safeAreaInsetsBottom,
-    left: StaticSafeAreaInsets.safeAreaInsetsLeft,
-    right: StaticSafeAreaInsets.safeAreaInsetsRight,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderRadius: borderRadius.base
-  },
-  retryTxt: {
-    fontSize: 15,
-    color: Colors.textColor,
-    borderRadius: borderRadius.small,
-    backgroundColor: Colors.secondary,
-    padding: padding.small,
+  input: {
+    height: 50,
+    marginVertical: padding.small,
+    marginHorizontal: padding.base,
+    borderRadius: borderRadius.base,
+    borderWidth: 1,
     paddingHorizontal: padding.base,
-  },
-  errorMessage: {
-    color: Colors.secondary,
-    ...Typography.textMedium,
-    width: '80%',
   },
 });
 

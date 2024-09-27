@@ -6,7 +6,7 @@ import Ticker from '../../data/model/Ticker';
 type Props = {
   ticker: Ticker;
 };
-const TickerGridItem = ({ticker}: Props) => {
+const TickerListItem = ({ticker}: Props) => {
   return (
     <View style={Style.cardView}>
       <TouchableOpacity activeOpacity={0.9} style={Style.cardContainer}>
@@ -18,4 +18,4 @@ const TickerGridItem = ({ticker}: Props) => {
   );
 };
 
-export default TickerGridItem;
+export default TickerListItem;

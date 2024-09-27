@@ -1,18 +1,12 @@
-import {
-  ActivityIndicator,
-  Alert,
-  FlatList,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ActivityIndicator, FlatList, Text, TextInput, View} from 'react-native';
 import Style from './Style';
 import {useEffect, useRef, useState} from 'react';
 import TickersAPIHandler from '../../data/apis/TickersAPIHandler';
 import TickersResponse from '../../data/model/TickersResponse';
 import Ticker from '../../data/model/Ticker';
-import TickerGridItem from '../../components/Ticker/TickerGridItem';
+import TickerListItem from '../../components/Ticker/TickerListItem';
 import ErrorSnackBar from '../../components/ErrorSnackBar/ErrorSnackBar';
+import SearchResultModal from '../../components/SearchResultModal/SearchResultModal';
 
 type Props = {
   onHideSplashScreen: () => void;
@@ -22,8 +16,10 @@ const ExploreScreen = ({onHideSplashScreen}: Props) => {
   const [tickersList, setTickersList] = useState<Ticker[]>([]);
   const [paginationURL, setPaginationURL] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [showError, setShowError] = useState<boolean>(true);
+  const [showError, setShowError] = useState<boolean>(false);
   const onEndReachedCalledDuringMomentum = useRef(true);
+  const [searchTxt, setSearchTxt] = useState<string>('');
+  const [showSearchResults, setShowSearchResults] = useState<boolean>(false);
 
   const getTickersList = () => {
     TickersAPIHandler.getTickers(20)
@@ -60,7 +56,7 @@ const ExploreScreen = ({onHideSplashScreen}: Props) => {
   }, []);
 
   const renderStock = ({index, item}: {index: number; item: Ticker}) => {
-    return <TickerGridItem ticker={item} />;
+    return <TickerListItem ticker={item} />;
   };
 
   const onStocksListEndReached = () => {
@@ -77,9 +73,26 @@ const ExploreScreen = ({onHideSplashScreen}: Props) => {
     else getTickersList();
   };
 
+  const onSubmitSearch = () => {
+    setShowSearchResults(true);
+  };
+
+  const onHideSearchModal = () => {
+    setShowSearchResults(false);
+  };
+
   return (
     <View style={Style.container}>
       <Text style={Style.title}>Stocks</Text>
+      <TextInput
+        style={Style.input}
+        onChangeText={setSearchTxt}
+        value={searchTxt}
+        placeholder="Search In Tickers"
+        keyboardType="web-search"
+        returnKeyLabel="search"
+        onSubmitEditing={onSubmitSearch}
+      />
       <FlatList
         testID="stocksList"
         showsVerticalScrollIndicator={false}
@@ -103,7 +116,12 @@ const ExploreScreen = ({onHideSplashScreen}: Props) => {
           color={'#FFF'}
         />
       )}
-      <ErrorSnackBar showSnackBar={true} onRetry={onRetry} />
+      <ErrorSnackBar showSnackBar={showError} onRetry={onRetry} />
+      <SearchResultModal
+        searchTxt={searchTxt}
+        isModalVisible={showSearchResults}
+        onHideModal={onHideSearchModal}
+      />
     </View>
   );
 };
