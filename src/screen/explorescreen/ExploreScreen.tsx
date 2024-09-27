@@ -30,6 +30,7 @@ const ExploreScreen = ({onHideSplashScreen}: Props) => {
         setShowError(false);
       })
       .catch(e => {
+        onHideSplashScreen();
         setShowError(true);
       });
   };
