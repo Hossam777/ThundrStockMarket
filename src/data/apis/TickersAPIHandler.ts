@@ -1,5 +1,4 @@
 import {baseURL} from '../../constants/APIs';
-import TickersResponse from '../model/TickersResponse';
 import FetchWrapper from './FetchWrapper';
 import {POLYGON_API_KEY} from '@env';
 
