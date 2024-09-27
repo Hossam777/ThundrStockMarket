@@ -2902,7 +2902,10 @@ __metadata:
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.3
-    react-native-splash-screen: ^3.3.0
+    react-native-dotenv: 3.4.11
+    react-native-safe-area-context: 4.11.0
+    react-native-splash-screen: 3.3.0
+    react-native-static-safe-area-insets: 2.2.0
     react-test-renderer: 18.3.1
     typescript: 5.0.4
   languageName: unknown
@@ -4101,6 +4104,13 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: fd7673ca77fe26cd5cba38d816bc72d641f500f1f9b25b83e8ce28827fe2da7ad583a8da26ab6af85f834138cf8dae9f69b0cd6ab925f52ddab1754db44d99ce
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
   languageName: node
   linkType: hard
 
@@ -7921,12 +7931,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-splash-screen@npm:^3.3.0":
+"react-native-dotenv@npm:3.4.11":
+  version: 3.4.11
+  resolution: "react-native-dotenv@npm:3.4.11"
+  dependencies:
+    dotenv: ^16.4.5
+  peerDependencies:
+    "@babel/runtime": ^7.20.6
+  checksum: 3ebac2c2ed79dd7e4920fd3fc2da9187413b7190231618e4858b46c47833677838b96d531afe7bd5c4b0a60454dba40cb8708722210df5d522e30aefbf41da05
+  languageName: node
+  linkType: hard
+
+"react-native-safe-area-context@npm:4.11.0":
+  version: 4.11.0
+  resolution: "react-native-safe-area-context@npm:4.11.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 6d6af265ecf1b9cb45e042a335f2c5da472ad41eb5d4fda8e31a1607b344726f0f4f9501ef3a3a731cec3784ba93485b44cbdafbf5f13055caa130c703bbd307
+  languageName: node
+  linkType: hard
+
+"react-native-splash-screen@npm:3.3.0":
   version: 3.3.0
   resolution: "react-native-splash-screen@npm:3.3.0"
   peerDependencies:
     react-native: ">=0.57.0"
   checksum: 14c565d5d4214f55586dcf6f7abd12d99d3e0667f67de3bda7aa24988971567b283a4187fbc0c6269c83b3c21d59d1950335c61bb0780ec2d065e20b3b9199d0
+  languageName: node
+  linkType: hard
+
+"react-native-static-safe-area-insets@npm:2.2.0":
+  version: 2.2.0
+  resolution: "react-native-static-safe-area-insets@npm:2.2.0"
+  checksum: 04ceb3cabfb874dc78276c2c9f5889cf19fdb930cbcc00a8ab2aae1fb7c3eca384a1e9131a23f1bc1de2158bb81940d5175606cd7cab5371aa86049d52c82a14
   languageName: node
   linkType: hard
 

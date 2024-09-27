@@ -1,29 +1,29 @@
-import React, {useEffect} from 'react';
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import React from 'react';
+import {StatusBar, useColorScheme} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import ExploreScreen from './src/screen/explorescreen/ExploreScreen';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const App = () => {
-  useEffect(() => {
-    //To Be Removed after api implemented
-    setTimeout(() => {
-      SplashScreen.hide();
-    }, 2000);
-  }, []);
-
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const onHideSplashScreen = () => {
+    SplashScreen.hide();
+  };
+
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView edges={['bottom', 'top']} style={{flex: 1}}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
+      <ExploreScreen onHideSplashScreen={onHideSplashScreen} />
     </SafeAreaView>
   );
 };
