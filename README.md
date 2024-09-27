@@ -51,17 +51,17 @@ yarn test
 
 # ScreenShots
 
-### Screenshot 1
-![Screenshot 1](./screenshots/splashscreen.png)
+### splashScreen
+<img src="./screenshots/splashscreen.png" alt="Splash Screen" height="600" width="300" style="border: 1px solid #ccc;" />
 
-### Screenshot 2
-![Screenshot 2](./screenshots/explore.png)
+### ExploreScreen
+<img src="./screenshots/explore.png" alt="Explore Screen" height="600" width="300" style="border: 1px solid #ccc;" />
 
-### Screenshot 3
-![Screenshot 3](./screenshots/error.png)
+### Error Screen
+<img src="./screenshots/error.png" alt="Error Screen" height="600" width="300" style="border: 1px solid #ccc;" />
 
-### Screenshot 4
-![Screenshot 4](./screenshots/search.png)
+### Search Screen
+<img src="./screenshots/search.png" alt="Search Screen" height="600" width="300" style="border: 1px solid #ccc;" />
 
-### Screenshot 5
-![Screenshot 5](./screenshots/search_result.png)
+### Search Result Screen
+<img src="./screenshots/search_result.png" alt="Search Result Screen" height="600" width="300" style="border: 1px solid #ccc;" />
